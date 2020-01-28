@@ -15,7 +15,6 @@ export default function AddFriend() {
             ...addFriend,
             [e.target.name]: e.target.value
         })
-        console.log(addFriend);
     }
 
     const onSubmit = e => {

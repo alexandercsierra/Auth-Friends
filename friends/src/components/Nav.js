@@ -9,6 +9,11 @@ export default function Nav() {
                 localStorage.clear();
                 history.push('/login');
                 }}>Sign Out</button>
+            <button onClick={(e)=>{
+                history.push('/friends');
+                }}>
+                Friends List
+            </button>
         </nav>
     )
 }
