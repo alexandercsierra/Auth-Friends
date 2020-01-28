@@ -7,13 +7,26 @@ import FriendsList from './components/FriendsList'
 import PrivateRoute from './components/PrivateRoute'
 import Nav from './components/Nav'
 import AddFriend from './components/AddFriend'
+import styled from 'styled-components'
+import friends from './imgs/friends.jpg'
+
+const Banner = styled.div`
+  height: 35vh;
+  background-image: url(${friends});
+  background-size: cover;
+  background-position: 50% 10%;
+`;
 
 function App() {
   return (
     <div className="App">
       <Nav/>
+      <Banner></Banner>
       <Route exact path="/login"><Login/></Route>
-      <PrivateRoute path='/friends' component={FriendsList}/>
+      <div>
+        <PrivateRoute path='/friends' component={FriendsList}/>
+      </div>
+      
       <PrivateRoute path='/addfriend' component={AddFriend}/>
     </div>
   );
