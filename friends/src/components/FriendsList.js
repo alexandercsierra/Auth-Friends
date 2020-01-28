@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {axiosWithAuth} from  '../utils/axiosWithAuth'
+import {useHistory} from 'react-router-dom'
 
 export default function FriendsList() {
-    const [friends, setFriends] = useState()
+    const [friends, setFriends] = useState();
+    const history = useHistory();
 
     useEffect(()=>{
         axiosWithAuth().get('/api/friends')
@@ -13,6 +15,7 @@ export default function FriendsList() {
 
     return (
         <div>
+            <button onClick={e=>history.push('/addfriend')}>Add a friend</button>
             {friends && friends.map(friend => {
                 return(
                     <div>
