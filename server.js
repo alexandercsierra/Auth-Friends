@@ -9,7 +9,7 @@ const token =
 let nextId = 7;
 
 let friends = [
-  
+  {playlist: 'Favorites'}
 ];
 
 app.use(bodyParser.json());
